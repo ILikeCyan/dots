@@ -1,0 +1,100 @@
+{
+  "layer": "top",
+    "modules-left": ["custom/arch", "hyprland/workspaces",],
+    "modules-center": ["clock", "custom/weather"],
+    "modules-right": ["custom/updates","custom/keybindhint", "backlight", "pulseaudio", "bluetooth", "network", "battery"],
+    "custom/arch": {
+      "format": "  ",
+      "tooltip": false,
+      "on-click": "sh $HOME/.config/rofi/bin/powermenu"
+    },
+    "hyprland/workspaces": {
+      "format": "{name}",
+      "format": "{icon}",
+      "tooltip": false,
+      "all-outputs": true,
+      "format-icons": {
+        "active": "",
+        "default": ""
+      }
+    },
+    "clock": {
+      "format": "<span color='#b4befe'> </span>{:%H:%M}",
+	   "tooltip": true,
+	   "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b>{}</b></span>"
+            }
+        },
+
+    },
+	"custom/keybindhint": {
+      "format": " ",
+      "on-click": "/home/j/.local/share/bin/keybinds_hint.sh",
+    },
+	"custom/updates": {
+       "format": "{} {icon}",
+       "return-type": "json",
+       "format-icons": {
+           "has-updates": "󱍷",
+           "updated": "󰂪",
+		},
+	   "on-click": "kitty --hold sudo pacman -Syu",
+       "exec-if": "which waybar-module-pacman-updates",
+       "exec": "waybar-module-pacman-updates  --interval-seconds 5 --network-interval-seconds 300"
+   },
+    "custom/weather": {
+      "format": "<span color='#b4befe'>{}°</span>",
+      "tooltip": true,
+      "interval": 3600,
+      "exec": "wttrbar",
+      "return-type": "json",
+    },
+    "backlight": {
+      "device": "intel_backlight",
+      "format": "<span color='#b4befe'>{icon}</span> {percent}%",
+      "format-icons": ["", "", "", "", "", "", "", "", ""],
+	  "tooltip": false
+    },
+    "pulseaudio": {
+      "format": "<span color='#b4befe'>{icon}</span> {volume}%",
+      "format-muted": "",
+      "tooltip": false,
+      "format-icons": {
+        "headphone": "",
+        "default": ["", "", "󰕾", "󰕾", "󰕾", "", "", ""]
+      },
+      "scroll-step": 1,
+    },
+    "bluetooth": {
+      "format": "<span color='#b4befe'></span> {status}",
+      "format-disabled": "<span color='#b4befe'></span> {num_connections}", // an empty format will hide the module
+      "format-connected": "<span color='#b4befe'></span> {num_connections}",
+      "tooltip-format": "{device_enumerate}",
+      "tooltip-format-enumerate-connected": "{device_alias}   {device_address}",
+	  "on-click": "blueman-manager",
+    },
+    "network": {
+      "tooltip": true,
+	  "format-wifi": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
+      "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+      "format-linked": "󰈀 {ifname} (Connected)",
+      "format-disconnected": "<span color='#b4befe'>󰖪 <span color='#b4befe'>",
+      "tooltip-format-disconnected": "Disconnected",
+	  "on-click": "nm-connection-editor",
+	  "interval": 2,
+    },
+    "battery": {
+      "format": "<span color='#b4befe'>{icon}</span> {capacity}%",
+      "format-icons": ["", "", "", "", "", "", "", "", "", ""],
+      "format-charging": "<span color='#b4befe'></span> {capacity}%",
+      "tooltip": false,
+    },
+}
