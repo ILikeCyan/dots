@@ -1,0 +1,64 @@
+{
+  "toplevel": [
+    {
+      "uuid": "mount-archive.nemo_action",
+      "type": "action",
+      "user-label": null,
+      "user-icon": null
+    },
+    {
+      "uuid": "90_new-launcher.nemo_action",
+      "type": "action",
+      "user-label": null,
+      "user-icon": null
+    },
+    {
+      "uuid": "set-resolution.nemo_action",
+      "type": "action",
+      "user-label": null,
+      "user-icon": null
+    },
+    {
+      "uuid": "92_show-expo.nemo_action",
+      "type": "action",
+      "user-label": null,
+      "user-icon": null
+    },
+    {
+      "uuid": "sample.nemo_action",
+      "type": "action",
+      "user-label": null,
+      "user-icon": null
+    },
+    {
+      "uuid": "change-background.nemo_action",
+      "type": "action",
+      "user-label": null,
+      "user-icon": null
+    },
+    {
+      "uuid": "set-as-background.nemo_action",
+      "type": "action",
+      "user-label": null,
+      "user-icon": null
+    },
+    {
+      "uuid": "91_delete-workspace.nemo_action",
+      "type": "action",
+      "user-label": null,
+      "user-icon": null
+    },
+    {
+      "uuid": "90_new-workspace.nemo_action",
+      "type": "action",
+      "user-label": null,
+      "user-icon": null
+    },
+    {
+      "uuid": "add-desklets.nemo_action",
+      "type": "action",
+      "user-label": null,
+      "user-icon": null
+    }
+  ]
+}

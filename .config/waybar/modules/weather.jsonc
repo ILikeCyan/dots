@@ -1,0 +1,7 @@
+    "custom/weather": {
+        "format": "{}°",
+        "tooltip": true,
+        "interval": 3600,
+        "exec": "wttrbar --date-format "%m/%d" --location Melbourne --hide-conditions",
+        "return-type": "json"
+    },
