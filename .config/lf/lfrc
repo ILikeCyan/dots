@@ -2,21 +2,39 @@ set shell zsh
 set drawbox true
 set colors true
 set mouse true
-set icons true
+set icons
+set number
+set relativenumber
 set scrolloff 10
 set wrapscroll true
 set ratios 2
 set ignorecase true
 set shellopts '-euy'
-set info size:time 
-set hidden!    
+set info size:time
+set hidden!
 set previewer ctpv
 set cleaner ctpvclear
 &ctpv -s $id
 &ctpvquit $id
 set ifs "\n"
+set incsearch
+set incfilter
+set globsearch on
+set ratios 2:3:4 # 2:3:7:7
+set truncatechar "…"
+set waitmsg "\033[1;31m⏎\033[m"
+set timefmt "02/01/2006 15:04:05 "
+set infotimefmtnew '02/01 15:04'
+set infotimefmtold '02/01/06'
+set errorfmt "\033[1;31m"
+set numberfmt "\033[38;2;75;87;116m"
+set dircounts
+set tabstop 4
+set scrolloff 5
+set wrapscroll
 set filesep "\n"
 set cursorpreviewfmt "\033[7;2m"
+set promptfmt "\033[34;1m%d\033[0m\033[1m%f\033[0m"
 
 cmd edit-config ${{
     nvim ~/.config/lf/lfrc
@@ -29,17 +47,16 @@ cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
 
 cmd mkfile ${{
   printf "File Name: "
-  read ans
-  $EDITOR $ans
+    read ans
+    nvim $ans
 }}
 
 cmd selectfiles ${{
-  
+
 
 }}
 
 map m mkfile
-
 map <enter> shell
 map a push :aj<space>
 map C edit-config
@@ -61,6 +78,6 @@ cmd on-redraw %{{
 }}
 
 
-   
+
 
 

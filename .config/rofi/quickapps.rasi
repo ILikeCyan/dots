@@ -39,11 +39,11 @@ listview {
     padding:                     2px;
     spacing:                     0em;
     enabled:                     true;
-    columns:                     1;
+    columns:                     2;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
-    flow:                        horizontal; 
+    flow:                        horizontal;
     reverse:                     false;
     fixed-height:                false;
     fixed-columns:               false;

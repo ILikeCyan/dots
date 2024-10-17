@@ -12,7 +12,7 @@ window {
     width:                       23em;
     height:                      30em;
     transparency:                "real";
-    fullscreen:                  false;
+    fullscreen:                  true;
     enabled:                     true;
     cursor:                      "default";
     spacing:                     0em;
