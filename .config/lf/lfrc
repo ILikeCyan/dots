@@ -37,7 +37,7 @@ set cursorpreviewfmt "\033[7;2m"
 set promptfmt "\033[34;1m%d\033[0m\033[1m%f\033[0m"
 
 cmd edit-config ${{
-    nvim ~/.config/lf/lfrc
+  nvim ~/.config/lf/lfrc
     lf -remote "send $id source ~/.config/lf/lfrc"
 }}
 
@@ -68,15 +68,14 @@ map o push :mkdir<space>
 echo
 
 cmd on-redraw %{{
-    if [ "$lf_width" -le 80 ]; then
-        lf -remote "send $id set ratios 1:2"
-    elif [ "$lf_width" -le 160 ]; then
-        lf -remote "send $id set ratios 1:2:3"
-    else
-        lf -remote "send $id set ratios 1:2:3:5"
-    fi
+  if [ "$lf_width" -le 80 ]; then
+    lf -remote "send $id set ratios 1:2"
+      elif [ "$lf_width" -le 160 ]; then
+      lf -remote "send $id set ratios 1:2:3"
+  else
+    lf -remote "send $id set ratios 1:2:3:5"
+      fi
 }}
-
 
 
 

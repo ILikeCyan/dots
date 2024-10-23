@@ -57,6 +57,8 @@ M.mason = {
     "json-lsp",
 
     "dockerfile-language-server",
+    "pyright",
+    "python-lsp-server",
 
     -- golang
     "gopls",
